@@ -2,12 +2,16 @@
 
 This is an [IBM Cloud Object Storage](https://www.ibm.com/cloud/object-storage) adapter for [Flysystem](http://flysystem.thephpleague.com/).
 
+
+## Note
+This package is a detached fork of [tavux/flysystem-ibm-cos](https://github.com/tavux/flysystem-ibm-cos)
+
 ## Installation
 
 Composer is the best way, as with all of Flysystem!
 
 ```bash
-composer require tavux/flysystem-ibm-cos
+composer require oss-tools/flysystem-ibm-cos
 ```
 
 ## Usage
@@ -15,7 +19,7 @@ composer require tavux/flysystem-ibm-cos
 Initial setup would be something like this:
 
 ```php
-use Tavux\Flysystem\IBMCloudObjectStorage\IbmCosAdapter;
+use OSSTools\Flysystem\IBMCloudObjectStorage\IbmCosAdapter;
 use League\Flysystem\Filesystem;
 
 $storage = new Filesystem(

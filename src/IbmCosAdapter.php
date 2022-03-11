@@ -1,16 +1,16 @@
 <?php
 
-namespace Tavux\Flysystem\IBMCloudObjectStorage;
+namespace OSSTools\Flysystem\IBMCloudObjectStorage;
 
 use Aws\S3\S3Client;
-use League\Flysystem\AwsS3v3\AwsS3Adapter;
+use League\Flysystem\AwsS3V3\AwsS3V3Adapter;
 
 /**
  * Class IbmCosFilesystem
  * @package Tavux\Flysytem\IBMCloudObjectStorage
  *
  */
-class IbmCosAdapter extends AwsS3Adapter{
+class IbmCosAdapter extends AwsS3V3Adapter{
 
     /**
      * IbmCosAdapter constructor.
@@ -22,7 +22,7 @@ class IbmCosAdapter extends AwsS3Adapter{
      * - endpoint
      * @param string $bucket
      */
-    public function __construct($params, $bucket)
+    public function __construct(array $params, string $bucket)
     {
         $client = S3Client::factory([
             'region' => $params['region'],
@@ -30,7 +30,7 @@ class IbmCosAdapter extends AwsS3Adapter{
                 'key' => $params['key'],
                 'secret' => $params['secret'],
             ],
-            'version' => isset($params['version']) ? $params['version'] :'latest',
+            'version' => $params['version'] ?? 'latest',
             'endpoint' => $params['endpoint'],
         ]);
 
