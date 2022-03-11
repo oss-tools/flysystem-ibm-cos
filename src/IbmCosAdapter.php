@@ -7,7 +7,7 @@ use League\Flysystem\AwsS3V3\AwsS3V3Adapter;
 
 /**
  * Class IbmCosFilesystem
- * @package Tavux\Flysytem\IBMCloudObjectStorage
+ * @package OSSTools\Flysytem\IBMCloudObjectStorage
  *
  */
 class IbmCosAdapter extends AwsS3V3Adapter{
